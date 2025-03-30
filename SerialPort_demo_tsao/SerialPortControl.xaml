@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SerialPort_demo_tsao.SerialPortControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SerialPort_demo_tsao"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:serial="clr-namespace:System.IO.Ports;assembly=System"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <GroupBox Header="SerialPort" Grid.Column="0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="PortName" Margin="10,10,0,0"></TextBlock>
+                        <ComboBox x:Name="cmbPorts" Width="80" Margin="10,10,0,0">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="BaudRat" Margin="10,10,10,0"></TextBlock>
+                        <ComboBox x:Name="cmbBaudRate" Width="80" Margin="10,10,5,0">
+
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Parity" Margin="10,10,25,0"></TextBlock>
+                        <ComboBox x:Name="cmbParity" Width="80" Margin="10,10,0,0">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="StopBits" Margin="10,10,10,0"></TextBlock>
+                        <ComboBox x:Name="cmbStopBits" Width="80" Margin="10,10,0,0">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10,10,12,0">DataBits</TextBlock>
+                        <ComboBox x:Name="cmbDataBits" Width="80" Margin="10,10,0,0" Text="8"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="settingserialport" Content="Setting" Click="settingserialport_Click" Width="80" Margin="10,10,0,0"></Button>
+                        <Button x:Name="serialportOpen" Content="serial port open" Click="serialportOpen_Click" Width="100" Margin="10,10,0,0" />
+                        <Button x:Name="serialportClose" Content="serial port close"  Click="serialportClose_Click" Width="100" Margin="10,10,0,0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="openBtn" Content="device open" Width="80" Margin="10,10,0,0" Click="openBtn_Click"></Button>
+                        <Button x:Name="closeBtn" Content="device close" Width="80" Margin="10,10,0,0" Click="closeBtn_Click"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="txtMilliseconds" Width="80" Background="Gray" Margin="10,10,0,0"></TextBox>
+                        <TextBlock Text="ms" Margin="10,10,0,0"></TextBlock>
+                        <Button x:Name="triggerdevice" Content="trigger device" Margin="10,10,0,0" Click="triggerdevice_Click"></Button>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+       </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
